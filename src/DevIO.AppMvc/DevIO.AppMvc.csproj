@@ -252,6 +252,16 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DevIO.Business\DevIO.Business.csproj">
+      <Project>{625d296e-504f-4972-a711-3c224673aa59}</Project>
+      <Name>DevIO.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DevIO.Infra\DevIO.Infra.csproj">
+      <Project>{2e5e383c-70df-4a64-8cb2-e473a31970f9}</Project>
+      <Name>DevIO.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -285,7 +295,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\JetBrains.ReSharper.CommandLineTools.2022.3.1\build\JetBrains.ReSharper.CommandLineTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\JetBrains.ReSharper.CommandLineTools.2022.3.1\build\JetBrains.ReSharper.CommandLineTools.targets'))" />
   </Target>
+  <Import Project="..\..\packages\JetBrains.ReSharper.CommandLineTools.2022.3.1\build\JetBrains.ReSharper.CommandLineTools.targets" Condition="Exists('..\..\packages\JetBrains.ReSharper.CommandLineTools.2022.3.1\build\JetBrains.ReSharper.CommandLineTools.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
